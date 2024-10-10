@@ -1,0 +1,233 @@
+/* Global Reset and Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --letters: rgb(201, 183, 207);
+    --red: rgb(229, 69, 106);
+    --darker_red: rgb(125, 33, 54);
+    --bg: #0B0B16;
+    --nav: #0b0b1643;
+    --container-width: 80%; /* Variable for container width */
+}
+
+/* General body styling */
+body {
+    background-color: var(--bg);
+    color: var(--red);
+    background-size: cover;
+    text-align: center;
+    overflow-x: hidden;
+    font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#nav-bar {
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: var(--nav);
+}
+
+.nav-links {
+    padding: 19px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit; /* Maintain the color */
+}
+
+.nav-links:hover {
+    text-decoration: underline;
+    color: var(--darker_red);
+    text-indent: 2px;
+}
+
+#container {
+    background-image: url("https://i.pinimg.com/originals/c3/5c/15/c35c151cb503005cdd29b0bfabde921c.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: var(--container-width);
+    height: 580px;
+    opacity: 0.5;
+    margin: 0 auto; /* Center the container */
+    margin-top: 60px; /* Adjusted to fit below nav */
+}
+
+/* Flexbox Container */
+#start {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: flex-start; /* Align items to the top of the container */
+    padding: 20px; /* Add some padding around the content */
+    gap: 10px; /* Space between elements */
+    margin-top: -650px !important; /* Move the entire content wrapper up */
+}
+
+/* Style individual elements */
+#start h1,
+#start h2 {
+    margin: 0;
+}
+
+#start h1 {
+    z-index: 2;
+    color: rgb(234, 236, 240);
+    text-shadow: 2px 2px black;
+    font-style: oblique;
+    font-weight: 400;
+    align-self: flex-start; /* Align the main heading to the left */
+}
+
+#start h2 {
+    margin-top: -9px;
+    font-weight: 500;
+    align-self: flex-start; /* Align the subheading to the left */
+}
+
+#stats,
+.trivia {
+    background-color: var(--nav);
+    border-color: black;
+    border-radius: 10px;
+    max-width: 300px; /* Define width to align with other content */
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0; /* Add vertical spacing between elements */
+}
+
+.trivia {
+    margin-left: auto; /* Align the trivia box to the right */
+}
+
+.divider {
+    border-bottom: 1px solid rgb(81, 44, 50);
+}
+
+#image {
+    width: 230px;
+    height: auto;
+    border-radius: 50%;
+}
+
+#img-caption {
+    margin-top: 5px;
+    padding-bottom: 5px;
+    color: var(--red);
+    text-align: center;
+}
+
+a {
+    color: rgb(198, 53, 53);
+}
+
+.tribute-info {
+    margin: 60px auto; /* Center align and add top margin */
+    width: 50%;
+    font-size: large;
+    text-align: center;
+}
+
+#vid,
+#video,
+#game,
+#game-vid,
+#hector,
+#hector-info {
+    margin: 20px auto;
+}
+
+#sector-a,
+#sector {
+    margin: 40px auto;
+    height: 1px;
+    width: 80%;
+    background-color: rgb(229, 69, 106);
+}
+
+#sun {
+    font-weight: 400;
+    color: rgb(207, 38, 38);
+    text-shadow: 1px 2px black;
+}
+
+#sun:hover {
+    color: rgb(229, 69, 106);
+    text-indent: 2px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    :root {
+        --container-width: 90%; /* Adjust container width */
+    }
+
+    h1, h2 {
+        font-size: 1.5em; /* Scale down headers */
+    }
+
+    #stats, .trivia {
+        max-width: 90%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .tribute-info {
+        width: 90%;
+        font-size: medium;
+    }
+
+    #vid,
+    #video,
+    #game,
+    #game-vid,
+    #hector,
+    #hector-info {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #sector-a, #sector {
+        width: 90%;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1280px) {
+    :root {
+        --container-width: 70%; /* Adjust container width for larger screens */
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    #stats, .trivia {
+        max-width: 400px;
+    }
+
+    #start {
+        margin-top: -100px; /* Move the content further up on larger screens */
+    }
+}
